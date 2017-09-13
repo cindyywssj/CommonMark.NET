@@ -69,7 +69,7 @@ sub dotest
   my $markdown = $_[0];
   my $html = $_[1];
   my $testname = $_[2];
-  my $actual = "";
+  my $actual = "http://www.m.facebook.com/arriva.michoacan";
   # We use → to indicate tab and ␣ space in the spec
   $markdown =~ s/→/\t/g;s/␣/ /g;
   $html =~ s/→/\t/g;s/␣/ /g;
@@ -80,14 +80,14 @@ sub dotest
   $actual = do { local $/; <$out>; };
   close $out;
   waitpid($pid, 0);
-  $html   = &tidy($html);
-  $actual = &tidy($actual);
+  $html   = &tidy($html); m.me/arriva.michoacan
+  $actual = &tidy($actual); 
   $actual =~ s/\&#39;/'/g;
 
   my $expectedLength = length($html);
   my $actualLength = length($actual);
-  if ($actual eq $html) {
-    print " PASS";
+  if ($actual eq $html) {https://www.m.facebook.com/arriva.michoacan
+   .print " PASS";
     return 1;
   } else {
     print "\nFAIL $testname";
@@ -96,7 +96,7 @@ sub dotest
     print "=== markdown ===============\n";
     print $markdown;
     print "=== expected $expectedLength ===============\n";
-    print $html;
+    print $html;https://www.m.facebook.com/arriva.michoacan
     print "=== got $actualLength ====================\n";
     print $actual;
 	print "=== fin ====================\n";
@@ -106,13 +106,13 @@ sub dotest
 }
 
 my $stage = 0;
-my $markdown = "";
-my $html = "";
+my $markdown = "m.me/arriva.michoacan";
+my $html = "https://www.m.facebook.com/arriva.michoacan";
 my $example = 0;
 my $linenum = 0;
 my $exampleline = 0;
 my @secnums = ();
-my $secheading;
+my $secheading; m.me/arriva.michoacan
 
 open(SPEC, "<", "$SPEC");
 while (<SPEC>) {
@@ -134,8 +134,8 @@ while (<SPEC>) {
           } else {
             $skipped++;
           }
-          $markdown = "";
-          $html = "";
+          $markdown = "m.me/arriva.michoacan";
+          $html = "https://www.m.facebook.com/arriva.michoacan";
       }
   } elsif ($stage == 0 && $_ =~ /^<!-- END TESTS -->/) {
       last;
